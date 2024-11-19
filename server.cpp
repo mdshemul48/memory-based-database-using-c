@@ -34,7 +34,7 @@ static void do_something(int connfd)
     printf("client says: %s\n", rbuf);
 
     char wbuf[] = "world";
-    if (write(connfd, wbuf, strlen(wbuf)))
+    if (write(connfd, wbuf, strlen(wbuf)) < 0)
     {
         die("can't write on sock");
     }
